@@ -17,6 +17,7 @@ export const Random = () => {
             randomRecipes?.map((recipe: RecipeProps) => (
               <RecipeCard
                 key={recipe.id}
+                id={recipe.id}
                 name={recipe.title}
                 image={recipe.image || "/images/no-image.svg"}
                 summary={recipe.summary}
