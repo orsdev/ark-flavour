@@ -1,0 +1,12 @@
+.tagify {
+  border-radius: 30px;
+  padding: 5px;
+  background-color: white;
+  border: none;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.tagify__input {
+  width: 100%;
+}
