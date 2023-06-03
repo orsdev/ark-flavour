@@ -1,16 +1,23 @@
 import { FC } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import parse from "html-react-parser";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   name: string;
   summary: string;
   image: string;
+  id: number;
 }
 
-export const RecipeCard: FC<CardProps> = ({ name, summary, image }) => {
+export const RecipeCard: FC<CardProps> = ({ id, name, summary, image }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] w-full cursor-pointer">
+    <div
+      className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] w-full cursor-pointer"
+      onClick={() => navigate(`/details/${id}`)}
+    >
       <LazyLoadImage
         alt={name}
         src={image || ""}
