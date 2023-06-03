@@ -25,4 +25,10 @@ body {
     font-size: 62.5%;
     font-family: "Nunito Sans", sans-serif;
   }
+  ol {
+    list-style: circle;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
 }
