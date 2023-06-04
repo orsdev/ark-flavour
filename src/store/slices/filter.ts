@@ -22,8 +22,6 @@ const filterSlice = createSlice({
     _updateDiet: (state: FilterState, action: PayloadAction<string>) => {
       state.diet = action.payload
     }
-  },
-  extraReducers: {
   }
 })
 
