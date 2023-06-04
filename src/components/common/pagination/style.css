@@ -1,0 +1,95 @@
+.pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  user-select: none;
+}
+
+.page-item {
+  position: relative;
+  padding: 0.5rem 0.8rem;
+  color: #667085;
+  display: none;
+  font-size: 15px;
+}
+
+.page-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+@media (min-width: 600px) {
+  .page-item {
+    display: block;
+  }
+}
+
+.page-item.disabled {
+  color: #d0d5dd;
+}
+
+.page-item.page-prev,
+.page-item.page-next {
+  color: white;
+}
+
+.page-item.page-prev.disabled .page-link,
+.page-item.page-next.disabled .page-link {
+  cursor: not-allowed;
+}
+
+.page-item.page-prev.disabled button,
+.page-item.page-next.disabled button {
+  color: #d0d5dd;
+}
+
+.page-link.page-item.disabled {
+  color: #d0d5dd;
+}
+
+.page-item.page-prev {
+  position: absolute;
+  left: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .page-item.page-prev {
+    display: none;
+  }
+}
+
+.page-item.page-next {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .page-item.page-next {
+    display: none;
+  }
+}
+
+.page-item.selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (min-width: 600px) {
+  .page-item.selected {
+    visibility: visible;
+    opacity: 1;
+  }
+}
