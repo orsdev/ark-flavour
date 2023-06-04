@@ -2,30 +2,30 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type FilterState = {
   search: string
-  preference: string
+  diet: string
 }
 
 const filterSlice = createSlice({
   name: 'filter',
   initialState: {
     search: '',
-    preference: ''
+    diet: ''
   } as FilterState,
   reducers: {
     _clearFilter: (state) => {
       state.search = '',
-        state.preference = ''
+        state.diet = ''
     },
     _updateSearch: (state: FilterState, action: PayloadAction<string>) => {
       state.search = action.payload;
     },
-    _updatePreference: (state: FilterState, action: PayloadAction<string>) => {
-      state.preference = action.payload
+    _updateDiet: (state: FilterState, action: PayloadAction<string>) => {
+      state.diet = action.payload
     }
   },
   extraReducers: {
   }
 })
 
-export const { _clearFilter, _updatePreference, _updateSearch } = filterSlice.actions
+export const { _clearFilter, _updateDiet, _updateSearch } = filterSlice.actions
 export default filterSlice.reducer
