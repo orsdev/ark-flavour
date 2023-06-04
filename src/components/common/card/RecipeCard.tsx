@@ -21,7 +21,7 @@ export const RecipeCard: FC<CardProps> = ({ id, name, summary, image }) => {
       <LazyLoadImage
         alt={name}
         src={image || ""}
-        className="rounded-t-lg object-cover"
+        className="object-cover w-full max-h-[300px]"
       />
       <div className="p-6">
         <h5 className="mb-2 text-2xl font-medium leading-tight text-neutral-800 ">
