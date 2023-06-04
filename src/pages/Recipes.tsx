@@ -3,16 +3,29 @@ import { useSearchRecipes } from "@/hooks";
 import { RecipeProps } from "@/hooks/type";
 import { DefaultLayout } from "@/layouts";
 import { useAppSelector } from "@/store/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Recipes = () => {
   const [page, setPage] = useState(1);
+  const location = useLocation();
+  const navigate = useNavigate();
   const { diet, search } = useAppSelector((state) => state.filter);
   const { recipes, total, isLoading } = useSearchRecipes({
     page,
     ingredients: search,
     diet,
   });
+
+  useEffect(() => {
+    if (!search) {
+      navigate("/");
+    }
+  }, [navigate, search]);
+
+  if (recipes && recipes?.length === 0) {
+    return <Navigate to="/404" state={{ from: location }} />;
+  }
 
   return (
     <DefaultLayout>
