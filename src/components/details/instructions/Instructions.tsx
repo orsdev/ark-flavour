@@ -9,7 +9,7 @@ export const Instructions: FC<InstructionsProps> = ({ instructions }) => {
   return (
     <div>
       <h1 className="my-6 mt-[100px] text-center text-6xl cursive text-gray-600">
-        Intructions
+        Instructions
       </h1>
       <div className="text-[1.3rem] px-6">
         {instructions && parse(instructions)}
