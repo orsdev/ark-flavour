@@ -38,5 +38,5 @@ Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser
 
 ## Production Link
 
-- [Preview](https://ark-flavour.vercel.app/)
+- [Preview](https://ark-flavour.vercel.app)
 
